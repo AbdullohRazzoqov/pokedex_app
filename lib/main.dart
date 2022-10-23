@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedexapp/view/home_page.dart';
-
+import 'package:pokedexapp/routers.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -12,10 +11,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
+      theme: ThemeData.fallback(useMaterial3: false),
+      initialRoute: '/',
+      onGenerateRoute: (settings) => RouterGenerator.generateRoute(settings),
     );
   }
 }
