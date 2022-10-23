@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedexapp/service/pokedex_service.dart';
 
+//!cached_network_images => plugins bo'lib internetdan kelgan imagesni cashda saqlaydi keyingi safar keshdan olib ishlatadi qayta internetga murojat qilmaydi
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -27,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
               var data = snap.data!.pokemon;
               return ListView.builder(itemBuilder: (context, index) {
                 return ListTile(
-                title: Text("${data![index].name}"),
+                  title: Text("${data![index].name}"),
                 );
               });
             }
