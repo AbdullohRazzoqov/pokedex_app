@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 top: MediaQuery.of(context).size.height * 0.04,
               ),
               child: const ListTile(
-                leading: CircleAvatar(radius: 25),
+                leading: CircleAvatar(radius: 25,backgroundImage: NetworkImage("https://source.unsplash.com/random"),),
                 title: Text(
                   "Razzoqov Shohjahon",
                   style: TextStyle(
@@ -121,11 +121,160 @@ class _MyHomePageState extends State<MyHomePage> {
                               children: [
                                 Container(
                                   width: 220,
-                                  height: 250,
+                                  height: 270,
                                   decoration: BoxDecoration(
                                     color: MyColors.C_353E65,
-                                    borderRadius:
-                                        BorderRadius.circular(30),
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      const Expanded(
+                                          flex: 4, child: SizedBox()),
+                                      Expanded(
+                                        flex: 6,
+                                        child: Column(
+                                          children: [
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                data[index].name.toString(),
+                                                style: const TextStyle(
+                                                  color: MyColors.white,
+                                                  fontSize: 18,
+                                                ),
+                                              ),
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                Column(
+                                                  children: [
+                                                    const Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8.0),
+                                                      child: Text(
+                                                        "Height",
+                                                        style: TextStyle(
+                                                            color:
+                                                                MyColors.white),
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      data[index]
+                                                          .height
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color:
+                                                              MyColors.C_F7BB17,
+                                                          fontSize: 17),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  children: [
+                                                    const Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8.0),
+                                                      child: Text("Weight",
+                                                          style: TextStyle(
+                                                              color: MyColors
+                                                                  .white)),
+                                                    ),
+                                                    Text(
+                                                      data[index]
+                                                          .weight
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color:
+                                                              MyColors.C_F7BB17,
+                                                          fontSize: 17),
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                            SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.01),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                Column(
+                                                  children: [
+                                                    const Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8.0),
+                                                      child: Text(
+                                                        "candy",
+                                                        style: TextStyle(
+                                                            color:
+                                                                MyColors.white),
+                                                      ),
+                                                    ),
+                                                    Text(
+                                                      data[index]
+                                                          .candyCount
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color:
+                                                              MyColors.C_F7BB17,
+                                                          fontSize: 17),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  children: [
+                                                    const Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8.0),
+                                                      child: Text("birth",
+                                                          style: TextStyle(
+                                                              color: MyColors
+                                                                  .white)),
+                                                    ),
+                                                    Text(
+                                                      data[index]
+                                                          .spawnChance
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          color:
+                                                              MyColors.C_F7BB17,
+                                                          fontSize: 17),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Column(
+                                                  children: [
+                                                    const Padding(
+                                                      padding:
+                                                          EdgeInsets.all(8.0),
+                                                      child: Text("avg spawns",
+                                                          style: TextStyle(
+                                                              color: MyColors
+                                                                  .white)),
+                                                    ),
+                                                    Text(
+                                                      data[index]
+                                                          .height
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          fontSize: 17,
+                                                          color: MyColors
+                                                              .C_F7BB17),
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 ),
                                 Align(
