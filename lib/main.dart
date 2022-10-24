@@ -3,6 +3,7 @@ import 'package:pokedexapp/routers.dart';
 void main() {
   runApp(const MyApp());
 }
+//camand
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
