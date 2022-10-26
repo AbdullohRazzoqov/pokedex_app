@@ -5,13 +5,12 @@ import 'package:pokedexapp/service/pokedex_service.dart';
 
 //!cached_network_images => plugins bo'lib internetdan kelgan imagesni cashda saqlaydi keyingi safar keshdan olib ishlatadi qayta internetga murojat qilmaydi
 class HomeBottomPage extends StatefulWidget {
- const  HomeBottomPage({super.key});
+  const HomeBottomPage({super.key});
   @override
   State<HomeBottomPage> createState() => _HomeBottomPageState();
 }
 
 class _HomeBottomPageState extends State<HomeBottomPage> {
-  
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -27,12 +26,12 @@ class _HomeBottomPageState extends State<HomeBottomPage> {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.04,
-                top: MediaQuery.of(context).size.height * 0.04,
+                bottom: MediaQuery.of(context).size.height * 0.25,
+                top: MediaQuery.of(context).size.height * 0.1,
               ),
               child: const ListTile(
                 leading: CircleAvatar(
-                  radius: 25,
+                  radius: 35,
                   backgroundImage:
                       NetworkImage("https://source.unsplash.com/random"),
                 ),
@@ -40,7 +39,7 @@ class _HomeBottomPageState extends State<HomeBottomPage> {
                   "Razzoqov Shohjahon",
                   style: TextStyle(
                     color: MyColors.white,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.bold,fontSize: 20
                   ),
                 ),
                 trailing: Icon(
@@ -48,37 +47,6 @@ class _HomeBottomPageState extends State<HomeBottomPage> {
                   color: MyColors.white,
                 ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Pokedex",
-                  style: TextStyle(
-                      color: MyColors.C_F7BB17,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-                Container(
-                  width: 45,
-                  height: 45,
-                  decoration: BoxDecoration(
-                    color: MyColors.C_F7BB17,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Icon(Icons.search),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.06,
-            ),
-            const Text(
-              "Near You",
-              style: TextStyle(fontSize: 25, color: MyColors.white),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.06,
             ),
             FutureBuilder(
               future: ServicePokedex.getPokedex(),
