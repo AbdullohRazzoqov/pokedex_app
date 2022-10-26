@@ -6,4 +6,5 @@ class MyColors {
   static const Color C_2E3353 = Color(0xFF2E3353);
   static const Color C_F7BB17 = Color(0xFFF7BB17);
   static const Color C_353E65 = Color(0xFF32459A);
+  static const Color borderColor = Color(0xFF3D835E);
 }
