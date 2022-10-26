@@ -30,7 +30,9 @@ class _AlbumBottomPageState extends State<AlbumBottomPage> {
                 itemBuilder: (context, index) {
                   var data = snap.data!.pokemon;
                   return GestureDetector(
-                    onTap: (){},
+                    onTap: () {
+                      Navigator.pushNamed(context, 'infoPage',arguments: data[index]);
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       margin: const EdgeInsets.all(15),
@@ -78,12 +80,14 @@ class _AlbumBottomPageState extends State<AlbumBottomPage> {
                                     Opacity(
                                       opacity: 0.5,
                                       child: Container(
-                                        margin: const EdgeInsets.only(right: 10),
+                                        margin:
+                                            const EdgeInsets.only(right: 10),
                                         width: 75,
                                         height: 25,
                                         decoration: BoxDecoration(
                                           color: MyColors.black,
-                                          borderRadius: BorderRadius.circular(12),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
                                         ),
                                         child: Center(
                                             child: Text(
