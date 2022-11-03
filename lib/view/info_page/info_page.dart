@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:pokedexapp/core/components/color/my_colors.dart';
 import 'package:pokedexapp/model/pokedex_model.dart';
@@ -53,6 +51,9 @@ class _InfoPageState extends State<InfoPage> {
               "${widget.brand.name}",
               style: const TextStyle(fontSize: 30, color: MyColors.white),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             Container(
               width: 80,
               height: 28,
@@ -66,6 +67,120 @@ class _InfoPageState extends State<InfoPage> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Text(
+                  "Avg Spawns   ",
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text("${widget.brand.avgSpawns}"),
+                const SizedBox(
+                  height: 50,
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                      width: MediaQuery.of(context).size.width * 0.45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                      width: ((MediaQuery.of(context).size.width *
+                          0.45 *
+                          widget.brand.avgSpawns!.toDouble() /
+                          100)),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: MyColors.borderColor,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Text(
+                  "Candy Count",
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text("${widget.brand.candyCount}"),
+                const SizedBox(
+                  height: 50,
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                      width: MediaQuery.of(context).size.width * 0.45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                      width: ((MediaQuery.of(context).size.width *
+                          0.45 *
+                          widget.brand.candyCount!.toDouble() /
+                          100)),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: MyColors.borderColor,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Text(
+                  "Egg                   ",
+                  style: TextStyle(fontSize: 17),
+                ),
+                Text("${widget.brand.spawnChance! * 100}"),
+                const SizedBox(
+                  height: 50,
+                ),
+                Stack(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                      width: MediaQuery.of(context).size.width * 0.45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                      width: ((MediaQuery.of(context).size.width *
+                          0.45 *
+                          (widget.brand.spawnChance! * 100) /
+                          100)),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: MyColors.borderColor,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 80,
+            ),
             Opacity(
               opacity: 0.3,
               child: Container(
@@ -74,7 +189,49 @@ class _InfoPageState extends State<InfoPage> {
                 decoration: BoxDecoration(
                     color: MyColors.borderColor,
                     borderRadius: BorderRadius.circular(15)),
-                child: Row(children: []),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "${widget.brand.weight} (${widget.brand.spawnChance})",
+                            style: const TextStyle(
+                                color: MyColors.white, fontSize: 16),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 8.0),
+                            child: Text(
+                              "Weight",
+                              style: TextStyle(color: MyColors.white),
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        height: 45,
+                        width: 1,
+                        color: MyColors.white,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "${widget.brand.height} (${(widget.brand.multipliers).toString().substring(1, 5)})",
+                            style: const TextStyle(
+                                color: MyColors.white, fontSize: 16),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 8.0),
+                            child: Text(
+                              "Height",
+                              style: TextStyle(color: MyColors.white),
+                            ),
+                          )
+                        ],
+                      )
+                    ]),
               ),
             )
           ],
